@@ -1,0 +1,28 @@
+name: ilmgo
+description: "Ilmgo - a dark, aurora-glass student app for university internships: discover, apply, track and interview."
+publish_to: 'none'
+version: 2.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  google_fonts: ^6.2.1
+  file_picker: ^8.0.0+1
+  intl: 0.20.3
+  http: ^1.2.2
+  shared_preferences: ^2.2.3
+  flutter_animate: ^4.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

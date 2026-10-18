@@ -1,0 +1,33 @@
+/* Jobs list + detail. Tokens only. */
+.page { padding-bottom: var(--s-8); display: grid; gap: var(--s-5); }
+.page__head { display: grid; gap: var(--s-2); }
+.page__head .h-section { margin-block: 0; max-width: none; }
+.note { display: inline-flex; align-items: center; gap: var(--s-2); width: fit-content; padding: var(--s-2) var(--s-4); font-size: var(--fs-sm); color: var(--mist); border-radius: var(--r-pill); }
+.filters { display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: var(--s-4); padding: var(--s-5); }
+.inputwrap { position: relative; display: block; }
+.inputwrap > svg { position: absolute; left: var(--s-4); top: 50%; transform: translateY(-50%); color: var(--faint); pointer-events: none; }
+.inputwrap .input { padding-left: calc(var(--s-4) + 28px); }
+.skillbar { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.count { display: flex; align-items: center; gap: var(--s-3); font-size: var(--fs-sm); min-height: 36px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: var(--s-4); }
+@media (max-width: 960px) { .filters { grid-template-columns: 1fr 1fr; } .filters__search { grid-column: 1 / -1; } }
+
+.back { display: inline-flex; align-items: center; gap: var(--s-2); width: fit-content; font-size: var(--fs-sm); }
+.back:hover { color: var(--text); }
+.jd { --accent: var(--azure); }
+.jd__hero { display: flex; align-items: center; gap: var(--s-5); padding: var(--s-6); position: relative; overflow: hidden; background-image: linear-gradient(120deg, color-mix(in srgb, var(--accent) 38%, transparent), transparent 70%), var(--img, none); background-size: cover; background-position: center; }
+.jd__title { font-size: var(--fs-3xl); }
+.jd__cols { display: grid; grid-template-columns: 1.6fr 1fr; gap: var(--s-4); align-items: start; }
+.jd__main, .jd__side { display: grid; gap: var(--s-4); }
+.jd__side { position: sticky; top: calc(var(--nav-h) + var(--s-6)); }
+.jd__card { padding: var(--s-6); display: grid; gap: var(--s-3); }
+.jd__card h2 { font-size: var(--fs-xl); }
+.jd__sk { font-size: var(--fs-sm); color: var(--muted); font-family: var(--font-body); margin-top: var(--s-2); }
+.jd__apply { background: var(--aurora-soft); justify-items: start; }
+.tick { display: grid; gap: var(--s-3); }
+.tick li { display: flex; gap: var(--s-3); align-items: flex-start; color: var(--muted); }
+.tick svg { color: var(--paper); flex: none; margin-top: 3px; }
+.cd { display: flex; gap: var(--s-3); }
+.cd__cell { display: grid; place-items: center; min-width: 54px; padding: var(--s-2); border-radius: var(--r-sm); background: color-mix(in srgb, var(--bg) 55%, transparent); border: 1px solid var(--stroke); }
+.cd__cell b { font-family: var(--font-display); font-size: var(--fs-xl); }
+@media (max-width: 900px) { .jd__cols { grid-template-columns: 1fr; } .jd__side { position: static; } .jd__hero { flex-direction: column; align-items: flex-start; } }

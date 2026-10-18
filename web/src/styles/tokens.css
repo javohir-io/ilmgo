@@ -1,0 +1,114 @@
+/* Ilmgo design tokens — the ONLY place raw colours / sizes live. Mirrors docs/DESIGN.md. */
+:root {
+  color-scheme: dark;
+
+  /* surfaces: Onyx, Onyx 2 and Charcoal from the Ilmgo palette */
+  --bg: #000000;
+  --bg-raised: #141414;
+  --charcoal: #2b2b2b;
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-hover: rgba(255, 255, 255, 0.1);
+  --stroke: rgba(191, 216, 227, 0.14);
+  --stroke-hi: rgba(191, 216, 227, 0.26);
+  --scrim: rgba(0, 0, 0, 0.66);
+
+  /* text: Paper White, with Light Azure at reduced strength for secondary text */
+  --text: #ffffff;
+  --muted: #8a9ca3;
+  --faint: #606c71;
+  --on-accent: #000000;   /* on light fills (sky, mist, paper) */
+  --on-azure: #ffffff;    /* on azure fills */
+
+  /* brand palette: Dark Azure, branding gradient stops, Light Azure, Paper White */
+  --azure: #00638e;
+  --azure-deep: #004a6b;
+  --azure-bright: #2e9bcb; /* lighter tint of Dark Azure, only where azure must read as text/icon on black */
+  --sky: #8cb9cc;
+  --mist: #bfd8e3;
+  --paper: #ffffff;
+  --danger: #ff6b6b;       /* functional colour, not part of the brand palette */
+
+  /* branding gradient: #000000 > #004A6B > #00638E > #8CB9CC */
+  --brand-gradient: linear-gradient(120deg, #000000 0%, #004a6b 40%, #00638e 68%, #8cb9cc 100%);
+  --aurora: linear-gradient(135deg, var(--azure), var(--sky) 58%, var(--mist));
+  --aurora-fill: linear-gradient(135deg, var(--azure), var(--azure-deep));
+  --aurora-soft: linear-gradient(135deg, color-mix(in srgb, var(--azure) 42%, transparent), color-mix(in srgb, var(--sky) 20%, transparent) 60%, color-mix(in srgb, var(--mist) 14%, transparent));
+
+  --st-submitted: var(--sky);
+  --st-reviewing: var(--mist);
+  --st-interview: var(--azure-bright);
+  --st-offer: var(--paper);
+  --st-rejected: var(--danger);
+  --st-withdrawn: var(--muted);
+  --st-scheduled: var(--sky);
+  --st-completed: var(--paper);
+  --st-cancelled: var(--muted);
+
+  /* shape */
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 26px;
+  --r-pill: 999px;
+  --r-xs: 8px;
+
+  /* type */
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: clamp(1.6rem, 1.2rem + 1.6vw, 2.25rem);
+  --fs-3xl: clamp(2rem, 1.3rem + 2.8vw, 3.25rem);
+  --fs-hero: clamp(2.5rem, 1.2rem + 5.6vw, 5.5rem);
+  --tracking-tight: -0.02em;
+  --lh-tight: 1.04;
+  --lh-body: 1.6;
+
+  /* spacing */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 140px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --max: 1200px;
+  --nav-h: 64px;
+  --tap: 44px;
+
+  /* glass */
+  --blur: blur(24px) saturate(140%);
+  --shadow-1: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-2: 0 24px 64px rgba(0, 0, 0, 0.5);
+  --glow-azure: 0 0 48px color-mix(in srgb, var(--azure) 55%, transparent);
+
+  /* motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 150ms;
+  --dur-ui: 320ms;
+  --dur-exit: 200ms;
+  --dur-hero: 750ms;
+
+  /* layers */
+  --z-bg: -1;
+  --z-nav: 50;
+  --z-drawer: 80;
+  --z-modal: 90;
+  --z-toast: 100;
+  --z-noise: 120;
+
+  /* focus */
+  --ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--sky);
+
+  /* film grain (inline SVG turbulence) */
+  --noise: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
